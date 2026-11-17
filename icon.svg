@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#4ECDC4"/>
+  <circle cx="64" cy="56" r="32" fill="#FFE66D"/>
+  <path d="M46 50 Q64 36 82 50 Q78 68 64 68 Q50 68 46 50 Z" fill="#FF6B6B"/>
+  <circle cx="54" cy="52" r="4" fill="#292F36"/>
+  <circle cx="74" cy="52" r="4" fill="#292F36"/>
+  <path d="M56 62 Q64 70 72 62" stroke="#292F36" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <text x="64" y="112" font-family="sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">FONEMIK</text>
+</svg>

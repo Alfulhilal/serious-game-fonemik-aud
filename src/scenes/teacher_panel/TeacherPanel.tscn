@@ -1,0 +1,202 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/teacher_panel/TeacherPanel.gd" id="1_teacher"]
+
+[node name="TeacherPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_teacher")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.960784, 0.964706, 0.980392, 1)
+
+[node name="LockPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxLock" type="VBoxContainer" parent="LockPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -140.0
+offset_right = 240.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelLockTitle" type="Label" parent="LockPanel/VBoxLock"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "🔒 Kunci Pengaman Guru"
+horizontal_alignment = 1
+
+[node name="LabelHint" type="Label" parent="LockPanel/VBoxLock"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Masukkan PIN (Default: 1234):"
+horizontal_alignment = 1
+
+[node name="LinePIN" type="LineEdit" parent="LockPanel/VBoxLock"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+alignment = 1
+secret = true
+
+[node name="BtnUnlock" type="Button" parent="LockPanel/VBoxLock"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Buka Panel"
+
+[node name="LabelError" type="Label" parent="LockPanel/VBoxLock"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.85098, 0.231373, 0.231373, 1)
+horizontal_alignment = 1
+
+[node name="MainContent" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnBack" type="Button" parent="MainContent"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 180.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 20
+text = "⬅ Menu Utama"
+
+[node name="LabelTitle" type="Label" parent="MainContent"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 40.0
+offset_right = 300.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Panel Peneliti & Pengaturan Sesi"
+horizontal_alignment = 1
+
+[node name="VBoxConfig" type="VBoxContainer" parent="MainContent"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 110.0
+offset_right = 500.0
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxStudent" type="HBoxContainer" parent="MainContent/VBoxConfig"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelID" type="Label" parent="MainContent/VBoxConfig/HBoxStudent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Identitas Subjek / ID Siswa:"
+
+[node name="LineStudentID" type="LineEdit" parent="MainContent/VBoxConfig/HBoxStudent"]
+custom_minimum_size = Vector2(240, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SISWA_01"
+
+[node name="BtnSetStudent" type="Button" parent="MainContent/VBoxConfig/HBoxStudent"]
+custom_minimum_size = Vector2(160, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Mulai Sesi Baru"
+
+[node name="LabelCurrentSession" type="Label" parent="MainContent/VBoxConfig"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.247059, 0.447059, 0.611765, 1)
+text = "Sesi Aktif: -"
+
+[node name="VBoxLogs" type="VBoxContainer" parent="MainContent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="LabelLogsHeader" type="Label" parent="MainContent/VBoxLogs"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Pratinjau Data Log Eksperimen (Format CSV):"
+
+[node name="TextPreview" type="TextEdit" parent="MainContent/VBoxLogs"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+editable = false
+
+[node name="HBoxButtons" type="HBoxContainer" parent="MainContent/VBoxLogs"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="BtnRefresh" type="Button" parent="MainContent/VBoxLogs/HBoxButtons"]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🔄 Perbarui"
+
+[node name="BtnExport" type="Button" parent="MainContent/VBoxLogs/HBoxButtons"]
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "📂 Cek Lokasi Berkas CSV"
+
+[node name="LabelExportStatus" type="Label" parent="MainContent/VBoxLogs"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.27451, 0.54902, 0.313726, 1)
+text = "-"

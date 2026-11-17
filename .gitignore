@@ -1,0 +1,17 @@
+# Godot Engine .gitignore
+.godot/
+*.translation
+
+# Exported binaries & packages
+*.apk
+*.aab
+*.exe
+*.zip
+build/
+export/
+
+# Research generated data / local device exports
+logs/
+*.tmp
+.DS_Store
+Thumbs.db
